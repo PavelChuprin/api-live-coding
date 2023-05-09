@@ -58,9 +58,9 @@ export function registerUser({ login, password, name }) {
 	return fetch("https://webdev-hw-api.vercel.app/api/user", {
 	  method: "POST",
 	  body: JSON.stringify({
-		 login,
-		 password,
-		 name,
+		login,
+		password,
+		name,
 	  }),
 	}).then((response) => {
 	 if (response.status === 400) {

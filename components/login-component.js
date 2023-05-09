@@ -56,26 +56,26 @@ export function renderLoginComponent({ appEl, setToken, fetchTodosAndRender }) {
 			if (!name) {
 				alert("Введите имя");
 				return;
-			 }
+			}
 			if (!login) {
 				alert("Введите логин");
 				return;
-			 }
-			 if (!password) {
+			}
+			if (!password) {
 				alert("Введите пароль");
 				return;
-			 }
-			 registerUser({
+			}
+			registerUser({
 				login: login,
 				password: password,
 				name: name,
-			 }).then((user) => {
+			}).then((user) => {
 				setToken(`Bearer ${user.user.token}`);
 				fetchTodosAndRender();
-			 })
-			 .catch(error => {
+			})
+			.catch(error => {
 					alert(error.message);
-			 })
+			})
 		}
 	});
 	
