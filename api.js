@@ -68,4 +68,4 @@ export function registerUser({ login, password, name }) {
 	 }
 	  return response.json();
 	});
- }
+}

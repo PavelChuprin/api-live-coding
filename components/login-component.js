@@ -80,8 +80,8 @@ export function renderLoginComponent({ appEl, setToken, fetchTodosAndRender }) {
 	});
 	
 		document.getElementById("toggle-button").addEventListener("click", () => {
-		 isLoginMode = !isLoginMode;
-		 renderForm();
+		isLoginMode = !isLoginMode;
+		renderForm();
 		})
 	}
 	renderForm();
