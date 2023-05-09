@@ -1,6 +1,6 @@
 const host = "https://webdev-hw-api.vercel.app/api/v2/todos";
 
-export function getTodos ({token}) {
+export function getTodos({token}) {
 	return fetch(host, {
 		method: "GET",
 		headers: {
@@ -15,7 +15,7 @@ export function getTodos ({token}) {
 		})
 }
 
-export function deleteTodo ({token, id}) {
+export function deleteTodo({token, id}) {
 	return fetch("https://webdev-hw-api.vercel.app/api/todos/" + id, {
 		method: "DELETE",
 		headers: {
@@ -27,7 +27,7 @@ export function deleteTodo ({token, id}) {
 		})
 }
 
-export function addTodo ({text, token}) {
+export function addTodo({text, token}) {
 	return fetch(host, {
 		method: "POST",
 		body: JSON.stringify({
@@ -36,6 +36,19 @@ export function addTodo ({text, token}) {
 		headers: {
 		Authorization: token,
 		}
+	})
+		.then((response) => {
+			return response.json();
+		})
+}
+
+export function login({login, password}) {
+	return fetch("https://webdev-hw-api.vercel.app/api/user/login", {
+		method: "POST",
+		body: JSON.stringify({
+			login,
+			password,
+		}),
 	})
 		.then((response) => {
 			return response.json();
